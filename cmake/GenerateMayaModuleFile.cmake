@@ -1,4 +1,20 @@
 
+# ------------------------------------------------
+# generate_maya_module_file()
+#
+# Description:
+#     Generate the module description file for Maya (.mod).
+#
+# Arguments:
+#     MODULE_NAME: Name of the module to create. The name should not contain extension.
+#     MODULE_VERSION: Version of the module to create. Defaults to "any".
+#     MODULE_PATH: Path to the module folder. Defaults to ".".
+#     DST_DIRPATH: Path to the destination folder.
+#     ARNOLD_PLUGIN_PATH: Path to the Arnold plugin folder. The path will be appended to the ARNOLD_PLUGIN_PATH environment variable.
+#     MTOA_TEMPLATES_PATH: Path to the MtoA templates folder. The path will be appended to the MTOA_TEMPLATES_PATH environment variable.
+#     MAYA_CUSTOM_TEMPATE_PATH: Path to the Maya custom template folder. The path will be appended to the MAYA_CUSTOM_TEMPLATE_PATH environment variable.
+#
+# ------------------------------------------------
 function(generate_maya_module_file)
   cmake_parse_arguments(
     _args
@@ -11,7 +27,7 @@ function(generate_maya_module_file)
   if(NOT _args_MODULE_NAME)
     message(FATAL_ERROR "[generate_maya_module_file] MODULE_NAME is required")
   endif()
-  
+
   if(NOT _args_DST_DIRPATH)
     message(FATAL_ERROR "[generate_maya_module_file] DST_DIRPATH is required")
   endif()
