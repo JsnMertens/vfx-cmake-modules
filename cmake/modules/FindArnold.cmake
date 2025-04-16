@@ -99,7 +99,7 @@ if (Arnold_INCLUDE_DIR AND EXISTS "${Arnold_INCLUDE_DIR}/ai_version.h")
   endforeach()
 
   # Concatenate the version components
-  if(Arnold_VERSION_ARCH AND Arnold_VERSION_MAJOR AND Arnold_VERSION_MINOR AND Arnold_VERSION_PATCH)
+  if(DEFINED Arnold_VERSION_ARCH AND DEFINED Arnold_VERSION_MAJOR AND DEFINED Arnold_VERSION_MINOR AND DEFINED Arnold_VERSION_PATCH)
     set(Arnold_VERSION "${Arnold_VERSION_ARCH}.${Arnold_VERSION_MAJOR}.${Arnold_VERSION_MINOR}.${Arnold_VERSION_PATCH}")
     message(STATUS "Found Arnold SDK version: ${Arnold_VERSION}")
   else()
